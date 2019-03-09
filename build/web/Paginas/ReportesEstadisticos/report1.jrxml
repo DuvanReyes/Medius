@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="c77545bb-c133-4fbe-be19-cd4c9d0e655d">
+	<property name="ireport.zoom" value="1.5"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="Title" fontName="Arial" fontSize="26" isBold="true" pdfFontName="Helvetica-Bold"/>
+	<style name="SubTitle" forecolor="#666666" fontName="Arial" fontSize="18"/>
+	<style name="Column header" forecolor="#666666" fontName="Arial" fontSize="12" isBold="true"/>
+	<style name="Detail" fontName="Arial" fontSize="12"/>
+	<style name="Heading 1" fontSize="16" isBold="true"/>
+	<style name="Style_1"/>
+	<queryString language="SQL">
+		<![CDATA[select ins.nombreinsumo, bd.bodeganombre, dbi.bodegainsumototal
+from bodegainsumo dbi
+inner join insumo ins on  dbi.insumoid=ins.idinsumo
+inner join bodega bd on dbi.bodegaid=bd.idbodega where dbi.bodegainsumototal<ins.insumocantidadminima;]]>
+	</queryString>
+	<field name="nombreinsumo" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="bodeganombre" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="bodegainsumototal" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<group name="bodeganombre">
+		<groupExpression><![CDATA[$F{bodeganombre}]]></groupExpression>
+		<groupHeader>
+			<band height="61">
+				<textField>
+					<reportElement style="SubTitle" x="47" y="13" width="506" height="24" forecolor="#000000" uuid="ef8e33f5-f73e-47f2-8a44-b7f4136015fe"/>
+					<textElement>
+						<font isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{bodeganombre}]]></textFieldExpression>
+				</textField>
+				<rectangle>
+					<reportElement mode="Opaque" x="0" y="13" width="36" height="24" forecolor="#CCCCCC" backcolor="#CCCCCC" uuid="b7f12472-4557-4860-a7e7-5253f9770c18"/>
+				</rectangle>
+			</band>
+		</groupHeader>
+		<groupFooter>
+			<band height="58"/>
+		</groupFooter>
+	</group>
+	<group name="nombreinsumo">
+		<groupExpression><![CDATA[$F{nombreinsumo}]]></groupExpression>
+		<groupHeader>
+			<band height="56">
+				<textField>
+					<reportElement style="SubTitle" x="0" y="4" width="460" height="20" uuid="827aca08-5c7e-49ff-b5d6-352082b1d449"/>
+					<textElement>
+						<font size="16" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{nombreinsumo}]]></textFieldExpression>
+				</textField>
+			</band>
+		</groupHeader>
+	</group>
+	<group name="bodegainsumototal">
+		<groupExpression><![CDATA[$F{bodegainsumototal}]]></groupExpression>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="70" splitType="Stretch">
+			<image>
+				<reportElement x="0" y="0" width="145" height="38" uuid="3f1aedc5-47dc-484d-b508-dc72f8f60f7b"/>
+				<imageExpression><![CDATA["Recurso 17.png"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement style="Title" x="170" y="15" width="203" height="33" uuid="f0cc6cb6-17ec-4621-aed8-4031fe1f7211"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[Insumos bajos]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="36" splitType="Stretch">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="35" width="555" height="1" uuid="24ae2b04-388f-4e28-bd6d-ae7767f9f8e1"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="66" splitType="Stretch">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="15" width="555" height="1" uuid="1305f188-32b2-4a2f-b99a-636a8b9412dc"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+			<textField>
+				<reportElement style="SubTitle" x="10" y="14" width="460" height="20" uuid="092e537a-7b1b-469c-9c8a-abce0953442a"/>
+				<textElement>
+					<font size="16" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{bodegainsumototal}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="99" splitType="Stretch">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="3" width="555" height="1" uuid="5e92277b-e561-4314-99ce-f823f565d4ca"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="68" splitType="Stretch">
+			<textField>
+				<reportElement style="Column header" x="433" y="0" width="80" height="20" uuid="4d2fee5e-abf3-41ac-83c6-7edf15509363"/>
+				<textElement textAlignment="Right">
+					<font size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement style="Column header" x="513" y="0" width="40" height="20" uuid="c561cc83-4cd1-405f-8704-6597faaa13d8"/>
+				<textElement>
+					<font size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement style="Column header" x="0" y="0" width="197" height="20" uuid="1494b0f8-b089-4a47-b78a-8aac6be85a32"/>
+				<textElement>
+					<font size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

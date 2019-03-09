@@ -1,0 +1,263 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://xmlns.jcp.org/jsf/passthrough"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Registro Bodegas</title>
+  <!-- Favicons -->
+  <link href="../../Recursos/css/bootstrap.css" rel="stylesheet"></link>
+  <link href="../../Recursos/css/font-awesome.css" rel="stylesheet"></link>
+  <link href="../../Recursos/css/style.css" rel="stylesheet"></link>
+  <link href="../../Recursos/css/micss.css" rel="stylesheet"></link>
+  <link href="../../Recursos/css/style-responsive.css" rel="stylesheet"></link>
+  <f:event type="preRenderView" listener="#{usuarioControlador.verificarSesion()}"/>
+  <meta http-equiv="X-UA-Compatible" content="edge, chrome=1" />
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, mustrevalidate"/>
+  <meta http-equiv="Pragma" content="no-cache" />
+  <meta http-equiv="Expires" content="-1" />
+    </h:head>
+    <h:body>
+        
+          <section id="container">
+    <!-- **********************************************************************************************************************************************************
+        TOP BAR CONTENT & NOTIFICATIONS
+        *********************************************************************************************************************************************************** -->
+    <!--header start-->
+    <header class="header black-bg">
+      <div class="sidebar-toggle-box">
+        <div class="fa fa-bars tooltips" data-placement="right" data-original-title="Toggle Navigation"></div>
+      </div>
+      <!--logo start-->
+      <a href="../Principal/Principal.xhtml" class="logo"><img src="../../Recursos/imagenes/Recurso 17.png"></img></a>
+      <!--logo end-->
+      <div class="nav notify-row" id="top_menu">
+        <!--  notification start -->
+        <ul class="nav top-menu">
+          <!-- settings start -->
+          <li class="dropdown">
+            <a data-toggle="dropdown" class="dropdown-toggle" href="index.html#">
+              <i class=" fa fa-question color-naranja"></i>
+              </a>
+            <ul class="dropdown-menu extended tasks-bar">
+              <div class="notify-arrow notify-arrow-green"></div>
+              <li>
+                <p class="green">¿Tienes Preguntas?</p>
+              </li>
+              <li>
+                  <a href="../Preguntas/Preguntas.xhtml">
+                  <div class="task-info">
+                    <div class="desc">Terceros</div>
+                  </div>
+                </a>
+              </li>
+              <li>
+                  <a href="../Preguntas/Preguntas.xhtml">
+                  <div class="task-info">
+                    <div class="desc">Compras/ventas/Cotizaciones</div>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a href="../Preguntas/Preguntas.xhtml">
+                  <div class="task-info">
+                    <div class="desc">Productos/Insumos/Inventarios</div>
+                  </div>
+                </a>
+              </li>
+            <li>
+                <a href="../Preguntas/Preguntas.xhtml">
+                  <div class="task-info">
+                    <div class="desc">Empleados/Contratación/Nomina</div>
+                  </div>
+                </a>
+              </li>
+              
+              <li>
+                <a href="../Preguntas/Preguntas.xhtml">
+                  <div class="task-info">
+                    <div class="desc">Configuración</div>
+                  </div>
+                </a>
+              </li>
+            </ul>
+          </li>
+          <!-- settings end -->
+          
+          
+          <!-- inbox dropdown start-->
+          <li id="header_inbox_bar" class="dropdown">
+            <a data-toggle="dropdown" class="dropdown-toggle" href="index.html#">
+              <i class="fa fa-comments-o color-verde"></i>
+              </a>
+            <ul class="dropdown-menu extended inbox">
+              <div class="notify-arrow notify-arrow-green"></div>
+              <li>
+                <p class="green">Mesa de Ayuda</p>
+              </li>
+              
+
+                    
+             <li>
+                <a data-toggle="modal" data-target="#myModal">
+                  <div class="task-info">
+                    <div class="desc">Asesores</div>
+                  </div>
+                </a>
+              </li>
+
+              <li>
+                  <a data-toggle="modal" data-target="#myModal">
+                  <div class="task-info">
+                    <div class="desc">Correo</div>
+                  </div>
+                </a>
+              </li>
+              
+              
+            </ul>
+          </li>
+          <!-- inbox dropdown end -->
+        </ul>
+        <!--  notification end -->
+      </div>
+      <div class="top-menu">
+        <h:form>
+        <ul class="nav pull-right top-menu">
+          <li>
+              <h:commandLink class="logout" action="#{usuarioControlador.cerrarSesion()}">Salir</h:commandLink>
+          </li>
+        </ul>
+          </h:form>
+      </div>
+    </header>
+    <!--Popups de contactos-->
+    <div class="showback">
+              <!-- Modal -->
+              <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                      <h4 class="modal-title" id="myModalLabel">Asesores</h4>
+                    </div>
+                    <div class="modal-body">
+                      Cel:3004473672
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+    <!--Fin Popups de contactos-->
+    
+    <!--header end-->
+    <!-- **********************************************************************************************************************************************************
+        MAIN SIDEBAR MENU
+        *********************************************************************************************************************************************************** -->
+    <!--sidebar start-->
+    <aside>
+      <div id="sidebar" class="nav-collapse ">
+        <!-- sidebar menu start-->
+        <ul class="sidebar-menu" id="nav-accordion">
+            
+            
+            <!-- Usuario-->
+           <h:form>
+            <h5 class="centered">#{usuarioControlador.userLogueado()}</h5>
+            </h:form>
+           <!--Fin Usuario-->
+           
+                <li><a href="../Principal/Principal.xhtml">Inicio</a></li>
+                <li><a href="ListaDocumentosInventario.xhtml">Movimientos Inventarios</a></li>
+                <li><a href="ListaSaldosBodega.xhtml">Saldos en Bodega</a></li>
+           
+        </ul>
+        <!-- sidebar menu end-->
+      </div>
+    </aside>
+    <!--sidebar end-->
+    <!-- **********************************************************************************************************************************************************
+        MAIN CONTENT
+        *********************************************************************************************************************************************************** -->
+    <!--main content start-->
+    <section id="main-content">
+      <section class="wrapper">
+            
+      
+            
+         <div class="row mt">
+          <div class="col-lg-12 ">
+                 <!--CUSTOM CHART START -->
+            <div class="border-head">
+                <h3><a href="../Principal/Principal.xhtml">Principal</a> /Inventarios /<a href="ListaBodegas.xhtml">Bodegas</a> /Registro Bodega</h3>
+            </div>
+            <!--custom chart end-->
+           
+            <h:form>
+
+    <div class="form-group centrar"> 
+        <label  class="control-label">Cod. Bodega</label>
+        <h:inputText class="form-control" id="idbodega" value="#{bodegasControlador.bodega.idbodega}"  readonly="true"></h:inputText>
+    </div>  
+                   
+                
+    <div class="form-group centrar"> 
+        <label  class="control-label">Nom. Bodega</label>
+        <h:inputText class="form-control" id="ciudadnombre" value="#{bodegasControlador.bodega.bodeganombre}" requiredMessage="Ingrese El Nombre De La Ciudad " required="true"></h:inputText>
+    </div>  
+                
+    <div class="form-group centrar"> 
+        <label  class="control-label">Estado</label>
+        <h:selectOneMenu  class="form-control"  id="estadobodega"  value="#{bodegasControlador.bodega.estadobodega}">
+            <f:selectItem itemLabel="Seleccione" itemValue="" />
+            <f:selectItem itemLabel="activo" itemValue="1" />
+            <f:selectItem itemLabel="inactivo" itemValue="2" />
+        </h:selectOneMenu>
+    </div> 
+         
+    <div class="form-group centrar form-group"> <!-- Submit Button -->
+        <h:commandButton class="btn boton-color " value="Registrar" action="#{bodegasControlador.registrar()}"></h:commandButton>
+    </div>   
+           
+             
+</h:form>
+            
+            <!-- /form-panel -->
+          </div>
+          <!-- /col-lg-12 -->
+        </div>
+        <!-- /row -->
+
+          <!-- /col-lg-9 END SECTION MIDDLE -->
+          <div>
+               <h:messages style="color:red;margin:8px;"/>
+          </div>
+
+        <!-- /row -->
+      </section>
+    </section>
+    <!--main content end-->
+    <!--footer start-->
+    <footer class="site-footer">
+      <div class="text-center">
+        <p>
+          &copy; Copyrights <strong>Medius Software</strong>. All Rights Reserved
+        </p>
+          <a href="../Principal/Principal.xhtml" class="go-top">
+          <i class="fa fa-angle-up"></i>
+          </a>
+      </div>
+    </footer>
+    <!--footer end-->
+  </section>
+  <!-- js placed at the end of the document so the pages load faster -->
+  <script src="../../Recursos/js/jquery.js"></script>
+  <script src="../../Recursos/js/bootstrap.js"></script>
+  <script  type="text/javascript" src="../../Recursos/js/jquery.dcjqaccordion.2.7.js"></script>
+  <script src="../../Recursos/js/jquery.scrollTo.min.js"></script>
+  <!--Cierra scroll-->
+  <script src="../../Recursos/js/common-scripts.js"></script>
+    </h:body>
+</html>
+

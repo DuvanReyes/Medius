@@ -1,0 +1,53 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+     <meta http-equiv="X-UA-Compatible" content="edge, chrome=1" />
+     <meta http-equiv="Cache-Control" content="no-cache, no-store, mustrevalidate"/>
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="-1" />
+    <h:head>
+        <title>Index</title>
+  <!-- Favicons -->
+  <link href="Recursos/css/bootstrap.css" rel="stylesheet"></link>
+  <link href="Recursos/css/font-awesome.css" rel="stylesheet"></link>
+  <link href="Recursos/css/style.css" rel="stylesheet"></link>
+  <link href="Recursos/css/style-responsive.css" rel="stylesheet"></link>
+  <link href="Recursos/css/micss.css" rel="stylesheet" type="text/css"/>
+    </h:head>
+    <h:body class="fondo-pantalla">
+<div id="login-page">
+    <div class="container">
+        
+      <h:form class="form-login" >
+          <div class="backgraund-colorverde">
+             <img class="login" src="Recursos/imagenes/Recurso 17.png"></img> 
+          </div>
+        <div class="login-wrap">
+            <label  class="control-label">Nom. usuario</label>
+            <h:inputText class="form-control" id="nombreusuario" value="#{usuarioControlador.usuario.nombreusuario}" ></h:inputText>
+          <br/>
+          <label  class="control-label">Contraseña</label>
+          <h:inputSecret class="form-control" id="contrasenausuario" value="#{usuarioControlador.usuario.contrasenausuario}" ></h:inputSecret>
+
+          <br/>
+          <h:commandButton class="btn boton-color centrar backgraund-colorverde color-blanco" value="Ingresar" action="#{usuarioControlador.validarLogin()}"></h:commandButton>
+             <div>
+               <h:messages style="color:red;margin:8px;"/>
+          </div>
+        </div>
+        <!-- Modal -->
+      
+        <!-- modal -->
+      </h:form>
+    </div>
+  </div>
+  <!-- js placed at the end of the document so the pages load faster -->
+  <script src="Recursos/js/jquery.js"></script>
+  <script src="Recursos/js/bootstrap.js"></script>
+  <!--BACKSTRETCH-->
+  <!-- You can use an image of whatever size. This script will stretch to fit in any screen size.-->
+  <script type="text/javascript" src="Recursos/js/jquery.backstretch.min.js"></script>
+
+    </h:body>
+</html>

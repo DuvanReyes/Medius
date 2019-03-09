@@ -1,0 +1,30 @@
+.ui-fileupload-choose {
+
+    background-color: rgb(95,174,227) !important;
+    color:#fff !important;
+    border-color: rgb(95,174,227) !important;
+
+}
+
+.ui-fileupload-upload{
+    background-color: rgb(95,174,227) !important;
+    color:#fff !important;
+    border-color: rgb(95,174,227) !important;
+}
+
+
+
+.color-naranja{
+    color: #FCB322;
+}
+.color-verde{
+    color: #4ECDC4;
+}
+.usuario {
+    color: white;
+    padding-right: 15px;
+    padding-top: 12px;
+    font-size: 15px;
+}
+
+    

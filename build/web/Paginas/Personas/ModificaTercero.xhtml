@@ -1,0 +1,383 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:b="http://bootsfaces.net/ui">
+    <h:head>
+        <title>Modifica Tercero</title>
+  <!-- Favicons -->
+  <link href="../../Recursos/css/bootstrap.css" rel="stylesheet"></link>
+  <link href="../../Recursos/css/font-awesome.css" rel="stylesheet"></link>
+  <link href="../../Recursos/css/style.css" rel="stylesheet"></link>
+  <link href="../../Recursos/css/micss.css" rel="stylesheet"></link>
+  <link href="../../Recursos/css/style-responsive.css" rel="stylesheet"></link>
+  <f:event type="preRenderView" listener="#{usuarioControlador.verificarSesion()}"/>
+  <meta http-equiv="X-UA-Compatible" content="edge, chrome=1" />
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, mustrevalidate"/>
+  <meta http-equiv="Pragma" content="no-cache" />
+  <meta http-equiv="Expires" content="-1" />
+    </h:head>
+    <h:body>
+        
+          <section id="container">
+    <!-- **********************************************************************************************************************************************************
+        TOP BAR CONTENT & NOTIFICATIONS
+        *********************************************************************************************************************************************************** -->
+    <!--header start-->
+    <header class="header black-bg">
+      <div class="sidebar-toggle-box">
+        <div class="fa fa-bars tooltips" data-placement="right" data-original-title="Toggle Navigation"></div>
+      </div>
+      <!--logo start-->
+      <a href="../Principal/Principal.xhtml" class="logo"><img src="../../Recursos/imagenes/Recurso 17.png"></img></a>
+      <!--logo end-->
+      <div class="nav notify-row" id="top_menu">
+        <!--  notification start -->
+        <ul class="nav top-menu">
+          <!-- settings start -->
+          <li class="dropdown">
+            <a data-toggle="dropdown" class="dropdown-toggle" href="index.html#">
+              <i class=" fa fa-question color-naranja"></i>
+              </a>
+            <ul class="dropdown-menu extended tasks-bar">
+              <div class="notify-arrow notify-arrow-green"></div>
+              <li>
+                <p class="green">¿Tienes Preguntas?</p>
+              </li>
+              <li>
+                  <a href="../Preguntas/Preguntas.xhtml">
+                  <div class="task-info">
+                    <div class="desc">Terceros</div>
+                  </div>
+                </a>
+              </li>
+              <li>
+                  <a href="../Preguntas/Preguntas.xhtml">
+                  <div class="task-info">
+                    <div class="desc">Compras/ventas/Cotizaciones</div>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a href="../Preguntas/Preguntas.xhtml">
+                  <div class="task-info">
+                    <div class="desc">Productos/Insumos/Inventarios</div>
+                  </div>
+                </a>
+              </li>
+            <li>
+                <a href="../Preguntas/Preguntas.xhtml">
+                  <div class="task-info">
+                    <div class="desc">Empleados/Contratación/Nomina</div>
+                  </div>
+                </a>
+              </li>
+              
+              <li>
+                <a href="../Preguntas/Preguntas.xhtml">
+                  <div class="task-info">
+                    <div class="desc">Configuración</div>
+                  </div>
+                </a>
+              </li>
+            </ul>
+          </li>
+          <!-- settings end -->
+          
+          
+          <!-- inbox dropdown start-->
+          <li id="header_inbox_bar" class="dropdown">
+            <a data-toggle="dropdown" class="dropdown-toggle" href="index.html#">
+              <i class="fa fa-comments-o color-verde"></i>
+              </a>
+            <ul class="dropdown-menu extended inbox">
+              <div class="notify-arrow notify-arrow-green"></div>
+              <li>
+                <p class="green">Mesa de Ayuda</p>
+              </li>
+              
+
+                    
+             <li>
+                <a data-toggle="modal" data-target="#myModal">
+                  <div class="task-info">
+                    <div class="desc">Asesores</div>
+                  </div>
+                </a>
+              </li>
+
+              <li>
+                  <a data-toggle="modal" data-target="#myModal">
+                  <div class="task-info">
+                    <div class="desc">Correo</div>
+                  </div>
+                </a>
+              </li>
+              
+              
+            </ul>
+          </li>
+          <!-- inbox dropdown end -->
+        </ul>
+        <!--  notification end -->
+      </div>
+      <div class="top-menu">
+        <h:form>
+        <ul class="nav pull-right top-menu">
+          <li>
+              <h:commandLink class="logout" action="#{usuarioControlador.cerrarSesion()}">Salir</h:commandLink>
+          </li>
+        </ul>
+          <ul class="nav pull-right top-menu">
+          <li>
+              <h5 class="usuario"><span>Usuario: (</span>#{usuarioControlador.userLogueado()}<span>)</span></h5>
+          </li>
+        </ul> 
+          </h:form>
+      </div>
+    </header>
+    <!--Popups de contactos-->
+    <div class="showback">
+              <!-- Modal -->
+              <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                      <h4 class="modal-title" id="myModalLabel">Asesores</h4>
+                    </div>
+                    <div class="modal-body">
+                      Cel:3004473672
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+    <!--Fin Popups de contactos-->
+    
+    <!--header end-->
+    <!-- **********************************************************************************************************************************************************
+        MAIN SIDEBAR MENU
+        *********************************************************************************************************************************************************** -->
+    <!--sidebar start-->
+    <aside>
+      <div id="sidebar" class="nav-collapse ">
+        <!-- sidebar menu start-->
+        <ul class="sidebar-menu" id="nav-accordion">
+
+                 <li><a href="../Principal/Principal.xhtml">Inicio</a></li>
+                <li><a href="ListaClientes.xhtml">Clientes</a></li>
+                <li><a href="ListaProveedores.xhtml">Proveedores</a></li>
+                <li><a href="../PaginasError/Error404.xhtml">Vendedores</a></li> 
+           
+        </ul>
+        <!-- sidebar menu end-->
+      </div>
+    </aside>
+    <!--sidebar end-->
+    <!-- **********************************************************************************************************************************************************
+        MAIN CONTENT
+        *********************************************************************************************************************************************************** -->
+    <!--main content start-->
+    <section id="main-content">
+      <section class="wrapper">
+            
+      
+            
+         <div class="row mt">
+          <div class="col-lg-12 ">
+                 <!--CUSTOM CHART START -->
+            <div class="border-head">
+                <h3><a href="../Principal/Principal.xhtml">Principal</a> /Configuración /<a href="ListaTerceros.xhtml">Terceros</a> /Registro Tercero</h3>
+            </div>
+            <!--custom chart end-->
+           <b:messages id="messages" showDetail="true"></b:messages>
+            <h:form>
+                
+    <div class="form-group centrar">
+        <div class="col-lg-12">
+        <label  class="control-label"> Cod. Tercero</label>
+        <h:inputText class="form-control" id="idtercero" value="#{terceroControlador.tercero.idtercero}"  readonly="true"></h:inputText>
+        </div>
+    </div>  
+           
+    <div class="form-group centrar">
+        <div class="col-lg-6">
+         <label  class="control-label">Tipo Documento</label>
+         <h:selectOneMenu  class="form-control"  id="tipodocumento"  value="#{terceroControlador.tercero.tipodocumento}">
+            <f:selectItem itemLabel="CC" itemValue="1" />
+            <f:selectItem itemLabel="NIT/RUT" itemValue="2" />
+            <f:selectItem itemLabel="DOC. EXTRANJERIA" itemValue="3" />
+        </h:selectOneMenu>
+        </div>
+        <div class="col-lg-6">
+        <label  class="control-label"> Num. Documento</label>
+        <h:inputText class="form-control" id="numerodocumento" value="#{terceroControlador.tercero.numerodocumento}"></h:inputText>
+        </div>
+    </div>
+                
+<div class="form-group centrar">
+        <div class="col-lg-6">
+        <label  class="control-label">Primer Nombre</label>
+        <h:inputText class="form-control" id="primernombre" value="#{terceroControlador.tercero.primernombre}" ></h:inputText>
+        </div>
+        <div class="col-lg-6">
+        <label  class="control-label">Segundo Nombre</label>
+        <h:inputText class="form-control" id="segundonombre" value="#{terceroControlador.tercero.segundonombre}" ></h:inputText>
+        </div>
+    </div>
+     
+<div class="form-group centrar">
+        <div class="col-lg-6">
+        <label  class="control-label">Primer Apellido</label>
+        <h:inputText class="form-control" id="primerapellido" value="#{terceroControlador.tercero.primerapellido}"></h:inputText>
+        </div>
+        <div class="col-lg-6">
+        <label  class="control-label">Segundo Apellido</label>
+        <h:inputText class="form-control" id="segundoapellido" value="#{terceroControlador.tercero.segundoapellido}" ></h:inputText>
+        </div>
+    </div>
+     
+<div class="form-group centrar">
+        <div class="col-lg-6">
+        <label  class="control-label">Ciudad</label>
+        <h:selectOneMenu class="form-control" id="idciudad" value="#{terceroControlador.ciudad.idciudad}">
+                        <!-- TODO: update below reference to list of available items-->
+                        <f:selectItems value="#{ciudadControlador.listaciudad()}" var="ciudad" itemValue="#{ciudad.idciudad}" itemLabel="#{ciudad.ciudadnombre}"/>
+         </h:selectOneMenu>
+        </div>
+        <div class="col-lg-6">
+        <label  class="control-label">Telefono</label>
+        <h:inputText class="form-control" id="telefono" value="#{terceroControlador.tercero.telefono}"  ></h:inputText>
+        </div>
+    </div>
+                
+<div class="form-group centrar">
+        <div class="col-lg-6">
+        <label  class="control-label">Dirección</label>
+        <h:inputText class="form-control" id="direccion" value="#{terceroControlador.tercero.direccion}" ></h:inputText>
+        </div>
+    <div class="col-lg-6">
+        <label  class="control-label">Correo</label>
+        <h:inputText class="form-control" id="correo" value="#{terceroControlador.tercero.correo}"  ></h:inputText>
+        </div>
+    </div>
+                
+<div class="form-group centrar">
+        <div class="col-lg-12">
+        <label  class="control-label">Nombre Comercial</label>
+        <h:inputText class="form-control" id="nombrecomercial" value="#{terceroControlador.tercero.nombrecomercial}"></h:inputText>
+        </div>
+    </div>
+                
+<div class="form-group centrar">
+        <div class="col-lg-6">
+        <label  class="control-label">Regimen Renta</label>
+        <h:selectOneMenu  class="form-control"  id="regimenrenta"  value="#{terceroControlador.tercero.regimenrenta}">
+            <f:selectItem itemLabel="P.Nat No Retenedor" itemValue="PNN" />
+            <f:selectItem itemLabel="Regimen Ordinario" itemValue="RO" />
+            <f:selectItem itemLabel="P.Nat Agente De Retención" itemValue="PNAR" />
+            <f:selectItem itemLabel="Extranjero Domiciliado" itemValue="EXD" />
+            <f:selectItem itemLabel="Extranjero No Domiciliado" itemValue="EXND" />
+        </h:selectOneMenu>
+        </div>
+    <div class="col-lg-6">
+        <label  class="control-label">Tipo. Ret.Renta</label>
+        <h:selectOneMenu class="form-control" id="idretencionrenta" value="#{terceroControlador.retencionrenta.idretencionrenta}">
+                        <!-- TODO: update below reference to list of available items-->
+                        <f:selectItems value="#{retencionRentaControlador.listaRetencionrenta()}" var="renta" itemValue="#{renta.idretencionrenta}" itemLabel="#{renta.nombreretencionrenta}"/>
+         </h:selectOneMenu>
+        </div>
+    </div>
+                  
+<div class="form-group centrar">
+        <div class="col-lg-6">
+        <label  class="control-label">Regimen Iva</label>
+        <h:selectOneMenu  class="form-control"  id="regimeniva"  value="#{terceroControlador.tercero.regimeniva}">
+            <f:selectItem itemLabel="No responsable Iva" itemValue="NRI" />
+            <f:selectItem itemLabel="Régimen Comun" itemValue="RC" />
+            <f:selectItem itemLabel="Régimen Simplificado" itemValue="RS" />
+            <f:selectItem itemLabel="Extrangero no Domiciliado" itemValue="END" />
+        </h:selectOneMenu>
+        </div>
+    <div class="col-lg-6">
+        <label  class="control-label">Tarifa ReteIva</label>
+        <h:inputText class="form-control" id="tarifareteiva" value="#{terceroControlador.tercero.tarifareteiva}" ></h:inputText>
+        </div>
+    </div>
+                
+<div class="form-group centrar">
+        <div class="col-lg-6">
+        <label  class="control-label">Regimen ICA</label>
+        <h:selectOneMenu  class="form-control"  id="regimenica"  value="#{terceroControlador.tercero.regimenica}">
+            <f:selectItem itemLabel="No Aplica" itemValue="NA" />
+            <f:selectItem itemLabel="Entidad Estatal" itemValue="EE" />
+            <f:selectItem itemLabel="Consorcio o UT" itemValue="CUT" />
+            <f:selectItem itemLabel="Gran Contribuyente" itemValue="GC" />
+            <f:selectItem itemLabel="Transportador" itemValue="TR" />
+            <f:selectItem itemLabel="Regimen Comun" itemValue="RC" />
+        </h:selectOneMenu>
+        </div>
+    <div class="col-lg-6">
+        <label  class="control-label">Tipo. Ret.Renta</label>
+        <h:selectOneMenu class="form-control" id="idretencionica" value="#{terceroControlador.retencionica.idretencionica}">
+                        <!-- TODO: update below reference to list of available items-->
+                        <f:selectItems value="#{retencionIcaControlador.listaRetencionica()}" var="ica" itemValue="#{ica.idretencionica}" itemLabel="#{ica.nombreretencionica}"/>
+         </h:selectOneMenu>
+        </div>
+    </div>
+            
+<div class="form-group centrar">
+
+        <label  class="control-label">Estado</label>
+        <h:selectOneMenu  class="form-control"  id="estadotercero"  value="#{terceroControlador.tercero.estadotercero}">
+            <f:selectItem itemLabel="activo" itemValue="1" />
+            <f:selectItem itemLabel="inactivo" itemValue="2" />
+        </h:selectOneMenu>
+  
+    </div>
+                
+
+        <div class="form-group centrar form-group ">
+            <h:commandButton class="btn boton-registrar" value="Registrar" action="#{terceroControlador.editar()}"></h:commandButton>
+            <a class="btn boton-cancelar " href="ListaTerceros.xhtml">Cancelar</a>
+         </div>   
+
+</h:form>
+            
+            <!-- /form-panel -->
+          </div>
+          <!-- /col-lg-12 -->
+        </div>
+        <!-- /row -->
+
+        <!-- /row -->
+      </section>
+    </section>
+    <!--main content end-->
+    <!--footer start-->
+    <footer class="site-footer">
+      <div class="text-center">
+        <p>
+          &copy; Copyrights <strong>Medius Software</strong>. All Rights Reserved
+        </p>
+          <a href="../Principal/Principal.xhtml" class="go-top">
+          <i class="fa fa-angle-up"></i>
+          </a>
+      </div>
+    </footer>
+    <!--footer end-->
+  </section>
+  <!-- js placed at the end of the document so the pages load faster -->
+  <script language="JavaScript" type="text/javascript" src="../../Recursos/js/jquery.js"></script>
+  <script language="JavaScript" type="text/javascript" src="../../Recursos/js/MiJs.js"></script>
+  <script src="../../Recursos/js/bootstrap.js"></script>
+  <script  type="text/javascript" src="../../Recursos/js/jquery.dcjqaccordion.2.7.js"></script>
+  <script src="../../Recursos/js/jquery.scrollTo.min.js"></script>
+  <!--Cierra scroll-->
+  <script src="../../Recursos/js/common-scripts.js"></script>
+    </h:body>
+</html>
+

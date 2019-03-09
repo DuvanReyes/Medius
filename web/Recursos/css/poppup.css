@@ -1,0 +1,59 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 09-feb-2019, 12:31:03
+    Author     : Arco02
+*/
+
+.popup-panel-overlay{
+    background-color:rgba(0,0,0,0.0);
+    position: absolute;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    z-index: 100;
+}
+.popup-panel{
+    margin: 100px;
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    color: red;
+}
+.modal-header {
+    display: flex;
+}
+
+.modal-footer {
+    padding: 7px !important;
+}
+.modal-title {
+    padding-right: 70%;
+}
+@media (min-width: 768px){
+.modal-content {
+   width: 70%;
+}
+
+}
+
+.border{
+    border-color: rgba(221,221,221,0.3);
+    border-bottom-style: solid;
+}
+
+.nombreCampo{
+    font-size: 15px;
+    color: black;
+    font-family: serif;
+}
+.datoCampo{
+    font-size: 15px;
+    font-family: serif;
+    color: cadetblue;
+    float: right;
+}
