@@ -1,0 +1,253 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report name" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="0d0bfdb8-526c-4c35-89a3-7b6756a36c0b">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="65"/>
+	<style name="table">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 1">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 1_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 1_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 1_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<subDataset name="Datos Empleado" uuid="4e3de86b-65c9-4ae4-8639-4ec90f514100"/>
+	<parameter name="idempleado" class="java.lang.Integer">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[SELECT  ciu.ciudadnombre,em.fechanacimientoempleado, con.idcontrato,con.fechainicio,con.fechafin,con.salarioactual,con.tipocontrato ,car.nombrecargo, sec.nombreseccion, ent1.nombreentidad, ent2.nombreentidad, ent3.nombreentidad, ent4.nombreentidad , ter.primernombre, ter.segundonombre, ter.primerapellido, ter.segundoapellido, ter.numerodocumento, ter.telefono, ter.direccion
+FROM  contratoempleado con
+JOIN cargo car ON con.codigocargo=car.idcargo
+JOIN seccion sec ON con.codigoseccion=sec.idseccion
+JOIN entidadseguridad ent1 ON con.codigoeps=ent1.identidad
+JOIN entidadseguridad ent2 ON con.codigoarl=ent2.identidad
+JOIN entidadseguridad ent3 ON con.codigocaja=ent3.identidad
+JOIN entidadseguridad ent4 ON con.codigopensiones=ent4.identidad
+JOIN empleado em ON con.empleadoid = em.idempleado
+JOIN tercero ter ON em.terceroidempleado = ter.idtercero 
+JOIN ciudad ciu ON ter.ciudadtercero = ciu.idciudad
+where em.idempleado=$P{idempleado};]]>
+	</queryString>
+	<field name="ciudadnombre" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="fechanacimientoempleado" class="java.sql.Date">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="idcontrato" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="fechainicio" class="java.sql.Date">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="fechafin" class="java.sql.Date">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="salarioactual" class="java.lang.Double">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="tipocontrato" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="nombrecargo" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="nombreseccion" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="nombreentidad" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="primernombre" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="segundonombre" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="primerapellido" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="segundoapellido" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="numerodocumento" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="telefono" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="direccion" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<variable name="Nombre" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="56" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="16" width="555" height="40" uuid="ae73d0d7-b569-4125-94a2-59940b36e782"/>
+				<textElement textAlignment="Center">
+					<font fontName="Arial" size="26" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Contrato Individual De Trabajo]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="24" splitType="Stretch">
+			<elementGroup/>
+			<staticText>
+				<reportElement x="0" y="1" width="555" height="20" uuid="41277d85-a508-4a29-9946-2c604763ffb6"/>
+				<textElement textAlignment="Center">
+					<font fontName="Arial" size="14"/>
+				</textElement>
+				<text><![CDATA[Contrato a Termino Indefinido]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="21" splitType="Stretch">
+			<line>
+				<reportElement x="14" y="0" width="515" height="1" uuid="c70cc2d8-640d-471d-835f-231da41ca4d0"/>
+			</line>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="152" splitType="Stretch">
+			<textField>
+				<reportElement x="195" y="129" width="100" height="20" uuid="1e5899f7-306d-4f3d-8304-e6068ab929b7"/>
+				<textFieldExpression><![CDATA[$F{nombreseccion}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="0" width="117" height="20" uuid="840476f5-4c7d-4f97-a67c-5737faf72dab"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Nombre Del Trabajador:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="34" y="116" width="33" height="20" uuid="a83583f0-1677-42f9-9e17-6be38b7ed9cf"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Cargo:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="67" y="116" width="100" height="20" uuid="16ae242e-b6a3-4fe4-9385-6c25fc3c253f"/>
+				<textFieldExpression><![CDATA[$F{nombrecargo}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="190" y="116" width="44" height="20" uuid="2da51d1b-6c4c-4b50-a0a7-2cf764cb2302"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Sección:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="117" y="0" width="337" height="20" uuid="17889dfa-77c9-4ee4-a2ab-95b67da74bde"/>
+				<textFieldExpression><![CDATA[$F{primernombre}.concat(" "+$F{segundonombre}+" "+$F{primerapellido}+" "+$F{segundoapellido})]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="52" y="40" width="100" height="20" uuid="f7e6ba7b-27ed-41fb-909a-6eab017e5d46"/>
+				<textFieldExpression><![CDATA[$F{direccion}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="40" width="52" height="20" uuid="cb953ede-17bc-433b-8e77-f1160dae664e"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Dirección:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="110" y="20" width="149" height="20" uuid="c0a34b42-2c27-4aa8-8ee6-01d1266ace8f"/>
+				<textFieldExpression><![CDATA[$F{fechanacimientoempleado}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="20" width="110" height="20" uuid="939866f1-0872-48e9-8bfa-1c28e82f5e06"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Fecha De Nacimiento:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="436" y="20" width="120" height="20" uuid="a4b1837f-df25-4af1-a49a-1231e80eabfc"/>
+				<textFieldExpression><![CDATA[$F{numerodocumento}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="319" y="20" width="117" height="20" uuid="3853147a-23d6-4fe5-8268-a9fef73fcf20"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Numero de Documento:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="100" y="80" width="100" height="20" uuid="a46d3f10-b90d-4ba5-a7c3-06bad2e8d862"/>
+				<textFieldExpression><![CDATA[$F{idcontrato}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="80" width="100" height="20" uuid="0dfd3c30-8834-438c-8ab8-4718d96e7e0e"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Numero de Contrato:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="367" y="40" width="100" height="20" uuid="c7e740df-86eb-452a-bd95-0f3d01a51ba1"/>
+				<textFieldExpression><![CDATA[$F{telefono}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="319" y="40" width="48" height="20" uuid="68f27432-2919-48ab-ac4f-7730e086b2e7"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Teléfono:]]></text>
+			</staticText>
+			<line>
+				<reportElement x="14" y="76" width="515" height="1" uuid="118cce31-6bdd-4f22-9a8c-8d34a0c4f925"/>
+			</line>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="15" splitType="Stretch"/>
+	</summary>
+</jasperReport>
